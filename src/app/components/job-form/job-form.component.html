@@ -1,0 +1,85 @@
+<form class="jobs-form" autocomplete="off" [formGroup]="jobForm" (submit)="submitForm()">
+    <mat-form-field>
+        <mat-label>
+            Title
+        </mat-label>
+        <input matInput placeholder="Title" formControlName="title" required />
+
+        @if(title?.invalid){
+        <mat-error>Title must be at least 3 characters long.</mat-error>
+        }
+
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Position
+        </mat-label>
+        <input matInput placeholder="Position" formControlName="position" required />
+
+        @if(title?.invalid){
+        <mat-error>Position must be at least 3 characters long.</mat-error>
+        }
+
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Company
+        </mat-label>
+        <input matInput placeholder="Company" formControlName="company" required />
+
+        @if(title?.invalid){
+        <mat-error>Company must be at least 3 characters long.</mat-error>
+        }
+
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Experience
+        </mat-label>
+        <input matInput placeholder="Experience" formControlName="experience" required />
+
+        @if(experience?.invalid){
+        <mat-error>Experience must be at least 3 characters long.</mat-error>
+        }
+
+    </mat-form-field>
+
+    <mat-radio-group formControlName="level" aria-label="Select an Option">
+        <mat-radio-button name="level" value="Fresher" required>Fresher</mat-radio-button>
+        <mat-radio-button name="level" value="Junior" required>Junior</mat-radio-button>
+        <mat-radio-button name="level" value="Senior" required>Senior</mat-radio-button>
+        <mat-radio-button name="level" value="Lead" required>Lead</mat-radio-button>
+        <mat-radio-button name="level" value="Architect" required>Architect</mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field>
+        <mat-label>
+            Description
+        </mat-label>
+        <input matInput placeholder="Description" formControlName="description" required />
+
+        @if(description?.invalid){
+        <mat-error>Description must be at least 3 characters long.</mat-error>
+        }
+
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Salary
+        </mat-label>
+        <input matInput placeholder="Salary" formControlName="salary" />
+
+        @if(salary?.invalid){
+        <mat-error>Salary must be at least 3 characters long.</mat-error>
+        }
+
+    </mat-form-field>
+    <br>
+    <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="jobForm.invalid"
+    >
+    Add
+    </button>
+</form>
